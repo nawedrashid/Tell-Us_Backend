@@ -1,0 +1,29 @@
+{
+  "name": "social_media-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nawedrashid/Social_Media-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nawedrashid/Social_Media-Backend/issues"
+  },
+  "homepage": "https://github.com/nawedrashid/Social_Media-Backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cloudinary": "^1.30.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.4.0",
+    "mongoose": "^6.2.8"
+  }
+}
