@@ -1,26 +1,31 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-
-const commentSchema = new Schema({
-    message:{
-        type:String
+const commentSchema = new Schema(
+  {
+    message: {
+      type: String,
+      required: true,
     },
     timeStamp: {
-        type: Date,
+      type: Date,
     },
-    like:{
-        type: Number
+    like: {
+      type: Number,
     },
-    dislike:{
-        type: Number
+    dislike: {
+      type: Number,
     },
-    author:{
-        type:mongoose.Schema.Types.ObjectId,
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
-},{
+  },
+  {
     timestamps: true,
-})
+  }
+);
 
 const PostSchema = new Schema({
   postImage: {
@@ -53,8 +58,6 @@ const PostSchema = new Schema({
   },
 });
 
+const Post = model("Post", PostSchema);
 
-
-const Post = model('Post',PostSchema)
-
-module.exports = { Post }
+module.exports = { Post };
