@@ -107,11 +107,12 @@ router.route("/:clientId/dislikedPost/:postId").post(async (req, res) => {
 router.route("/:userId/removePost/:postId").post(async (req, res) => {
   try {
     const { userId, postId } = req.params;
+    console.log(postId)
     const getPost = await Post.findById(postId);
     const updateUserPost = await User.findById(userId)
     updateUserPost.posts = updateUserPost.posts.filter((post) => String(post) !== String(postId))
     await updateUserPost.save()
-    const deletePost = await Post.findOneAndDelete(postId)
+    const deletePost = await Post.findByIdAndDelete(postId)
     const getUpdatePost = await Post.find({})
     if(getUpdatePost)
     return res.json({ success:true, getUpdatePost })
